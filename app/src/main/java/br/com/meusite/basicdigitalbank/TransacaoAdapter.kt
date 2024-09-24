@@ -15,14 +15,13 @@ class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAd
         val textHora: TextView = itemView.findViewById(R.id.textHora)
     }
 
-    // Cria a visualização (item da lista)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransacaoViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val itemView = layoutInflater.inflate(R.layout.item_transacao, parent, false)
         return TransacaoViewHolder(itemView)
     }
 
-    // Liga os dados da transação ao item da lista
     override fun onBindViewHolder(holder: TransacaoViewHolder, position: Int) {
         val transacao = lista[position]
         holder.textDescricao.text = transacao.descricao
@@ -31,7 +30,6 @@ class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAd
         holder.textHora.text = transacao.hora
     }
 
-    // Retorna o tamanho da lista de transações
     override fun getItemCount(): Int {
         return lista.size
     }
