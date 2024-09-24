@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_lista"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+  <TextView
+      android:id="@+id/textDescricao"
+      android:layout_width="394dp"
+      android:layout_height="wrap_content"
+      android:text="Descricao:"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/textValor"
+      android:layout_width="139dp"
+      android:layout_height="wrap_content"
+      android:text="Valor:"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/textData"
+      android:layout_width="140dp"
+      android:layout_height="wrap_content"
+      android:text="Data:"
+      android:textStyle="bold" />
+
+  <TextView
+      android:id="@+id/textHora"
+      android:layout_width="140dp"
+      android:layout_height="wrap_content"
+      android:text="Hora:"
+      android:textStyle="bold" />
+</LinearLayout>
