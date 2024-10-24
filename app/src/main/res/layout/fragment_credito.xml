@@ -1,87 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreditoFragment">
+    tools:context=".TrasacaoFragments.CreditoFragment">
 
     <View
-        android:id="@+id/view"
-        android:layout_width="406dp"
-        android:layout_height="264dp"
+        android:id="@+id/viewDivisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewAtoa" />
+
+    <View
+        android:id="@+id/viewAtoa2"
+        android:layout_width="371dp"
+        android:layout_height="274dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@+id/viewAtoa"
+        app:layout_constraintVertical_bias="0.239" />
 
     <TextView
         android:id="@+id/textData"
         android:layout_width="187dp"
         android:layout_height="35dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="76dp"
         android:text="Cartão de crédito"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="@+id/viewAtoa2"
+        app:layout_constraintTop_toTopOf="@+id/viewAtoa2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewFaturaAtual"
         android:layout_width="155dp"
         android:layout_height="32dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="4dp"
         android:text="Fatura atual"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="@+id/viewAtoa2"
         app:layout_constraintTop_toBottomOf="@+id/textData" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewCreditValue"
         android:layout_width="118dp"
         android:layout_height="37dp"
+        android:layout_marginTop="4dp"
         android:text="R$ 903,25"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintStart_toStartOf="@+id/viewAtoa2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFaturaAtual" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewInfos"
         android:layout_width="259dp"
         android:layout_height="66dp"
         android:layout_marginTop="4dp"
         android:text="Limite disponível de R$ 81,08 Novo! A fatura fechou e já pesou?  A gente parcela ela pra você."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="@+id/viewAtoa2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCreditValue" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/buttonSemUtilidade"
         android:layout_width="184dp"
         android:layout_height="60dp"
         android:text="Aliviar Fatura"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/viewAtoa2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="@+id/viewAtoa2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInfos"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/view2"
-        android:layout_width="412dp"
-        android:layout_height="122dp"
+        android:id="@+id/view_acoes"
+        android:layout_width="400dp"
+        android:layout_height="92dp"
+        android:layout_marginBottom="392dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnPix"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="48dp"
+        android:background="@drawable/circle_button_background"
+        android:contentDescription="ir_fragment_pix"
+        android:src="@drawable/icon_pix"
+        app:layout_constraintBottom_toBottomOf="@+id/view_acoes"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="387dp" />
+        app:layout_constraintTop_toTopOf="@+id/view_acoes"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <ImageButton
+        android:id="@+id/btnTransferir"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/circle_button_background"
+        android:contentDescription="ir_fragment_transferir"
+        android:src="@drawable/icon_transferir"
+        app:layout_constraintBottom_toBottomOf="@+id/view_acoes"
+        app:layout_constraintStart_toEndOf="@+id/btnPix"
+        app:layout_constraintTop_toTopOf="@+id/view_acoes"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <ImageButton
+        android:id="@+id/btnDepositar"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/circle_button_background"
+        android:contentDescription="ir_fragment_depositar"
+        android:src="@drawable/icon_depositar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_acoes"
+        app:layout_constraintStart_toEndOf="@+id/btnTransferir"
+        app:layout_constraintTop_toTopOf="@+id/view_acoes"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <TextView
+        android:id="@+id/textPix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="Área Pix"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnPix"
+        app:layout_constraintStart_toStartOf="@+id/btnPix"
+        app:layout_constraintTop_toBottomOf="@+id/btnPix"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textTransferir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="Transferir"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnTransferir"
+        app:layout_constraintStart_toStartOf="@+id/btnTransferir"
+        app:layout_constraintTop_toBottomOf="@+id/btnTransferir"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textDepositar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="Depositar"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnDepositar"
+        app:layout_constraintStart_toStartOf="@+id/btnDepositar"
+        app:layout_constraintTop_toBottomOf="@+id/btnDepositar"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <View
+        android:id="@+id/viewAtoa"
+        android:layout_width="396dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_acoes" />
+
+    <Button
+        android:id="@+id/buttonAtoa"
+        android:layout_width="221dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#AFAAAA"
+        android:text="Meus cartões"
+        android:textAlignment="viewStart"
+        android:textColor="#121212"
+        android:textColorLink="#7A7A7A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/viewAtoa" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="175dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

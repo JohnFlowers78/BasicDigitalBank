@@ -4,32 +4,36 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputEditText
+import br.com.meusite.basicdigitalbank.CaixinhaFragments.CaixinhasActivity
+import br.com.meusite.basicdigitalbank.TrasacaoFragments.CreditoFragment
+import br.com.meusite.basicdigitalbank.TrasacaoFragments.ExtratoActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var textUserName : TextView
     private lateinit var bttnExtrato : Button
-    private lateinit var bttnCredito : Button
-    private lateinit var button4 : Button
+    private lateinit var btnCredito : FloatingActionButton
+    private lateinit var btnCaixinhas : FloatingActionButton
+    private var saldoTotal: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textUserName = findViewById(R.id.textUserName)
+
         encontrarElementos()
 
-        bttnCredito.setOnClickListener {
+        btnCredito.setOnClickListener {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.ContainerMain, CreditoFragment())
                 .commit()
         }
 
-        button4.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.ContainerMain, CaixinhasFragment())
-                .commit()
+        btnCaixinhas.setOnClickListener {
+            val intent = Intent(this, CaixinhasActivity::class.java)
+            startActivity(intent)
         }
 
         bttnExtrato.setOnClickListener {
@@ -40,9 +44,46 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun encontrarElementos(){
-        bttnCredito = findViewById(R.id.bttnCredito)
+        textUserName = findViewById(R.id.textUserName)
+        btnCredito = findViewById(R.id.btnCredito)
         bttnExtrato = findViewById(R.id.bttnExtrato)
-        bttnExtrato = findViewById(R.id.bttnExtrato)
-        button4 = findViewById(R.id.button4)
+        btnCaixinhas = findViewById(R.id.btnCaixinhas)
+    }
+
+    fun getSaldoTotal(): Double {
+        return saldoTotal
+    }
+
+    fun setSaldoTotal(novoSaldo: Double) {
+        saldoTotal = novoSaldo
+        atualizarSaldo()
+    }
+
+    fun atualizarSaldo() {
+        val textSaldo = findViewById<TextView>(R.id.textSaldo)
+        textSaldo.text = "R$ %.2f".format(saldoTotal)
+    }
+
+    // Função para diminuir o saldo (nova função)
+    fun diminuirSaldo(valor: Double) {
+        saldoTotal -= valor
+        atualizarSaldo() // Atualiza a interface ou qualquer lógica associada ao saldo
+    }
+
+    fun atualizarSaldoTransacao(valor: Double, tipoTransacao: String) {
+        when (tipoTransacao) {
+            "deposito" -> saldoTotal += valor
+            "transferencia" -> if (saldoTotal >= valor) {
+                saldoTotal -= valor
+            } else {
+                // Tratar saldo insuficiente
+                mostrarErroSaldoInsuficiente()
+            }
+        }
+        atualizarSaldo()
+    }
+
+    fun mostrarErroSaldoInsuficiente() {
+        Toast.makeText(this, "Saldo insuficiente!", Toast.LENGTH_SHORT).show()
     }
 }

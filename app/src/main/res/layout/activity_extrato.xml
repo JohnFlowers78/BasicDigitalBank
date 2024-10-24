@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExtratoActivity">
+    tools:context=".TrasacaoFragments.ExtratoActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTransacoes"
@@ -16,12 +16,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_transacao" />
 
     <View
         android:id="@+id/view4"
-        android:layout_width="422dp"
-        android:layout_height="137dp"
+        android:layout_width="411dp"
+        android:layout_height="136dp"
         android:background="#673AB7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -37,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_default" />
+        app:srcCompat="@drawable/jose" />
 
     <TextView
         android:id="@+id/textView13"
