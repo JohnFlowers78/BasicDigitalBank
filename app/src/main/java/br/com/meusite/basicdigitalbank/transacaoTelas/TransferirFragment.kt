@@ -35,7 +35,7 @@ class TransferirFragment : Fragment() {
         mTransacaoViewModel = ViewModelProvider(this).get(TransacaoViewModel::class.java)
 
         btnTransferir.setOnClickListener {
-            val chavePix = txtEditChavePix.text.toString()
+            val chavePix = "Transfer: " + txtEditChavePix.text.toString()
             val valorTransfer = txtEditValorTransfer.text.toString()
 
             if (!TextUtils.isEmpty(valorTransfer)) {

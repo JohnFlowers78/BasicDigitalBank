@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.meusite.basicdigitalbank.data.Transacao
 import br.com.meusite.basicdigitalbank.R
 import br.com.meusite.basicdigitalbank.data.TransacaoViewModel
 
@@ -25,9 +24,9 @@ class ExtratoActivity : AppCompatActivity() {
         rvTransacoes.adapter = transacaoAdapter
         rvTransacoes.layoutManager = LinearLayoutManager(this)
 
-        // Observar mudanças na lista de transações
-        mTransacaoViewModel.readAllData.observe(this, Observer { transacoes ->
-            transacaoAdapter.updateList(transacoes) // Atualizar Adapter com a nova lista de transações
+        // Observar mudanças na lista de transações  ->  para se "Auto-Atualizar".
+        mTransacaoViewModel.readAllData.observe(this, Observer { transacoes ->                  //  Configura o ExtratoActivity para observar as mudanças em readAllData
+            transacaoAdapter.updateList(transacoes)                                                  // Atualizar Adapter com a nova lista de transações
         })
     }
 }

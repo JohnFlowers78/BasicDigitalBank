@@ -29,6 +29,8 @@ class DepositarFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_depositar, container, false)
 
+        val descricao = ""
+
         txtEditValorDep = view.findViewById(R.id.txtEditValorDep)
         txtEditDescricao = view.findViewById(R.id.txtEditDescricao)
         btnDepositar2 = view.findViewById(R.id.btnDepositar2)
@@ -36,7 +38,11 @@ class DepositarFragment : Fragment() {
 
         btnDepositar2.setOnClickListener {
             val valorDep = txtEditValorDep.text.toString()
-            val descricao = txtEditDescricao.text.toString()
+            if(txtEditDescricao == null){
+                val descricao = "Depósito: R$" + txtEditValorDep.text.toString()
+            }else{
+                val descricao = "Depósito: " + txtEditDescricao.text.toString()
+            }
 
             if (!TextUtils.isEmpty(valorDep)) {
                 val valor = valorDep.toDoubleOrNull()

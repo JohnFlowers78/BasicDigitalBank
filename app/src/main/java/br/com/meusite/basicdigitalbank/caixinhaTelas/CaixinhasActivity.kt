@@ -3,17 +3,11 @@ package br.com.meusite.basicdigitalbank.caixinhaTelas
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.meusite.basicdigitalbank.data.AppDatabase
-import br.com.meusite.basicdigitalbank.data.Caixinha
 import br.com.meusite.basicdigitalbank.data.CaixinhaViewModel
 import br.com.meusite.basicdigitalbank.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class CaixinhasActivity : AppCompatActivity() {
 
@@ -55,24 +49,5 @@ class CaixinhasActivity : AppCompatActivity() {
                 .addToBackStack(null)
                 .commit()
         }
-
-        lifecycleScope.launch {
-            withContext(Dispatchers.IO) {
-                preencherBaseCaixinhas()
-            }
-        }
-
-    }
-
-    // Método para popular a base de caixinhas iniciais
-    private fun preencherBaseCaixinhas() {
-        val caixinhasIniciais = listOf(
-            Caixinha(0, "Viagem", 500.0),
-            Caixinha(0, "Reserva de Emergência", 1000.0),
-            Caixinha(0, "Novo Celular", 200.0)
-        )
-
-        val db = AppDatabase.getDatabase(this)
-        db.caixinhaDao().insertAll(caixinhasIniciais)
     }
 }

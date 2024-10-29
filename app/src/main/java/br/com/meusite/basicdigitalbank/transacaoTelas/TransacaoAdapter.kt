@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.*    // Import para Adapter<> e
 import br.com.meusite.basicdigitalbank.data.Transacao
 import br.com.meusite.basicdigitalbank.R
 
-class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAdapter.TransacaoViewHolder>() {
+class TransacaoAdapter(private var transacoes: List<Transacao>) : Adapter<TransacaoAdapter.TransacaoViewHolder>() {
 
     inner class TransacaoViewHolder(itemView: View) : ViewHolder(itemView) {       // para gerenciar o layout de cada item exibido da RecyclerView
         val textDescricao: TextView = itemView.findViewById(R.id.textDescricao)          //Podemos dizer que o ViewHolder que recebe o "id" de cada componente para mapear os dados certo.
@@ -17,6 +17,11 @@ class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAd
         val textHora: TextView = itemView.findViewById(R.id.textHora)
     }
 
+    // func p atualizar a lista de transações
+    fun updateList(novaLista: List<Transacao>) {
+        transacoes = novaLista
+        notifyDataSetChanged()    // Notifica o RecyclerView para se atualizar com a nova lista
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransacaoViewHolder {  // método qeu infla o Layout XML para cada item
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -25,7 +30,7 @@ class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAd
     }
 
     override fun onBindViewHolder(holder: TransacaoViewHolder, position: Int) {    // Responsável por atribuir os valores de cada item do banco em suas devidas "View"s
-        val transacao = lista[position]                                                 //  o "[position]" aqui é prova de que estamos fazendo isso para cada posição de registro do Database!
+        val transacao = transacoes[position]                                                 //  o "[position]" aqui é prova de que estamos fazendo isso para cada posição de registro do Database!
         holder.textDescricao.text = transacao.descricao
         holder.textValor.text = String.format("R$ %.2f", transacao.valor)
         holder.textData.text = transacao.data
@@ -33,6 +38,6 @@ class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAd
     }
 
     override fun getItemCount(): Int {
-        return lista.size
+        return transacoes.size
     }
 }

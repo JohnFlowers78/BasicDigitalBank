@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import br.com.meusite.basicdigitalbank.MainActivity
@@ -15,7 +14,6 @@ import br.com.meusite.basicdigitalbank.R
 class DetalhesCaixinhaFragment : Fragment() {
 
     private var caixinhaId: Int? = null
-    private var imagemUri: String? = null // Adicionando a URI da imagem
     lateinit var btnDeleteCaixinha: Button
     lateinit var btnUpdtCaixinha: Button
 
@@ -36,7 +34,7 @@ class DetalhesCaixinhaFragment : Fragment() {
         // Exibir os detalhes da caixinha aqui
         val textViewNome = view.findViewById<TextView>(R.id.CaixinhaNometextView)
         val textViewSaldo = view.findViewById<TextView>(R.id.SaldoCaixinhaTextView)
-        val imageView = view.findViewById<ImageView>(R.id.selectedImageViewUpd2)
+//        val imageView = view.findViewById<ImageView>(R.id.selectedImageViewUpd2)
 
         val botaoGuardar = view.findViewById<Button>(R.id.btnGuardarDin)
         botaoGuardar.setOnClickListener {
