@@ -1,4 +1,4 @@
-package br.com.meusite.basicdigitalbank.Data
+package br.com.meusite.basicdigitalbank.data
 
 import androidx.lifecycle.LiveData
 

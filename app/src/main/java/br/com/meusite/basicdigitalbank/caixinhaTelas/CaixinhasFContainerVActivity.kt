@@ -1,4 +1,4 @@
-package br.com.meusite.basicdigitalbank.CaixinhaFragments
+package br.com.meusite.basicdigitalbank.caixinhaTelas
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import br.com.meusite.basicdigitalbank.R
-import br.com.meusite.basicdigitalbank.TrasacaoFragments.CreditoFragment
+import br.com.meusite.basicdigitalbank.transacaoTelas.CreditoFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CaixinhasFContainerVActivity : AppCompatActivity() {

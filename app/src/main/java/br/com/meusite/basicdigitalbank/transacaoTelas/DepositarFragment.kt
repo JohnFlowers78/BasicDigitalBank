@@ -1,4 +1,4 @@
-package br.com.meusite.basicdigitalbank.TrasacaoFragments
+package br.com.meusite.basicdigitalbank.transacaoTelas
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import br.com.meusite.basicdigitalbank.Data.Transacao
-import br.com.meusite.basicdigitalbank.Data.TransacaoViewModel
+import br.com.meusite.basicdigitalbank.data.Transacao
+import br.com.meusite.basicdigitalbank.data.TransacaoViewModel
 import br.com.meusite.basicdigitalbank.MainActivity
 import br.com.meusite.basicdigitalbank.R
 import com.google.android.material.textfield.TextInputEditText

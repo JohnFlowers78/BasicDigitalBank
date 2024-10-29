@@ -1,10 +1,10 @@
-package br.com.meusite.basicdigitalbank.TrasacaoFragments
+package br.com.meusite.basicdigitalbank.transacaoTelas
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.meusite.basicdigitalbank.Data.Transacao
+import br.com.meusite.basicdigitalbank.data.Transacao
 import br.com.meusite.basicdigitalbank.R
 
 class ExtratoActivity : AppCompatActivity() {

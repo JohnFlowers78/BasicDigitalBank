@@ -1,4 +1,4 @@
-package br.com.meusite.basicdigitalbank.CaixinhaFragments
+package br.com.meusite.basicdigitalbank.caixinhaTelas
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import br.com.meusite.basicdigitalbank.Data.Caixinha
-import br.com.meusite.basicdigitalbank.Data.CaixinhaViewModel
+import br.com.meusite.basicdigitalbank.data.Caixinha
+import br.com.meusite.basicdigitalbank.data.CaixinhaViewModel
 import br.com.meusite.basicdigitalbank.MainActivity
 import br.com.meusite.basicdigitalbank.R
 import com.google.android.material.textfield.TextInputEditText
@@ -22,8 +21,6 @@ class AddCaixinhaFragment : Fragment() {
     private lateinit var txtCaixinhaNome: TextInputEditText
     private lateinit var txtCaixinhaValor: TextInputEditText
     private lateinit var btnCriar: Button
-    private lateinit var selectedImageView: ImageView
-    private var selectedImageRes: Int = R.drawable.default_image
     lateinit var mCaixinhaViewModel: CaixinhaViewModel
 
     override fun onCreateView(

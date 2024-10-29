@@ -1,4 +1,4 @@
-package br.com.meusite.basicdigitalbank.TrasacaoFragments
+package br.com.meusite.basicdigitalbank.transacaoTelas
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

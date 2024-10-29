@@ -1,4 +1,4 @@
-package br.com.meusite.basicdigitalbank.CaixinhaFragments
+package br.com.meusite.basicdigitalbank.caixinhaTelas
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

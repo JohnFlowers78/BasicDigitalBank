@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CaixinhaFragments.CaixinhasActivity">
+    tools:context=".caixinhaTelas.CaixinhasActivity">
 
     <View
         android:id="@+id/view3"
@@ -21,6 +21,7 @@
         android:id="@+id/imageView"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        android:contentDescription="@string/img_User"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
@@ -49,7 +50,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
-        android:contentDescription="ir_add_caixinha_fragm"
+        android:contentDescription="@string/ir_add_caixinha_fragm"
         app:layout_constraintBottom_toBottomOf="@+id/rvCaixinhas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.926"

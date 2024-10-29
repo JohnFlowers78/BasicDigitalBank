@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.*    // Import para Adapter<> e ViewHolder()
-import br.com.meusite.basicdigitalbank.Data.Transacao
+import br.com.meusite.basicdigitalbank.data.Transacao
 
 class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAdapter.TransacaoViewHolder>() {
 

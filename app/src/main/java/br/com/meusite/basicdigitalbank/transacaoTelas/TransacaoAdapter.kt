@@ -1,11 +1,11 @@
-package br.com.meusite.basicdigitalbank.TrasacaoFragments
+package br.com.meusite.basicdigitalbank.transacaoTelas
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.*    // Import para Adapter<> e ViewHolder()
-import br.com.meusite.basicdigitalbank.Data.Transacao
+import br.com.meusite.basicdigitalbank.data.Transacao
 import br.com.meusite.basicdigitalbank.R
 
 class TransacaoAdapter(private val lista: List<Transacao>) : Adapter<TransacaoAdapter.TransacaoViewHolder>() {

@@ -6,9 +6,9 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import br.com.meusite.basicdigitalbank.CaixinhaFragments.CaixinhasActivity
-import br.com.meusite.basicdigitalbank.TrasacaoFragments.CreditoFragment
-import br.com.meusite.basicdigitalbank.TrasacaoFragments.ExtratoActivity
+import br.com.meusite.basicdigitalbank.caixinhaTelas.CaixinhasActivity
+import br.com.meusite.basicdigitalbank.transacaoTelas.CreditoFragment
+import br.com.meusite.basicdigitalbank.transacaoTelas.ExtratoActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:backgroundTint="#CE2121"
     android:foregroundTint="#AF1D1D"
-    tools:context=".CaixinhaFragments.DetalhesCaixinhaFragment">
+    tools:context=".caixinhaTelas.DetalhesCaixinhaFragment">
 
     <ImageView
         android:id="@+id/selectedImageViewUpd2"

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.BasicDigitalBank"
         tools:targetApi="31">
         <activity
-            android:name=".ExtratoActivity"
+            android:name="br.com.meusite.basicdigitalbank.transacaoTelas.ExtratoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -24,6 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="br.com.meusite.basicdigitalbank.caixinhaTelas.CaixinhasActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="br.com.meusite.basicdigitalbank.caixinhaTelas.CaixinhasFContainerVActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,12 +1,11 @@
-package br.com.meusite.basicdigitalbank.CaixinhaFragments
+package br.com.meusite.basicdigitalbank.caixinhaTelas
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import br.com.meusite.basicdigitalbank.Data.Caixinha
+import br.com.meusite.basicdigitalbank.data.Caixinha
 import br.com.meusite.basicdigitalbank.R
 
 class CaixinhaAdapter(
@@ -22,7 +21,7 @@ class CaixinhaAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CaixinhaViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_transacao, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_caixinha, parent, false)
         return CaixinhaViewHolder(view)
     }
 

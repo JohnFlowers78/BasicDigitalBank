@@ -1,15 +1,14 @@
-package br.com.meusite.basicdigitalbank.CaixinhaFragments
+package br.com.meusite.basicdigitalbank.caixinhaTelas
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.meusite.basicdigitalbank.Data.AppDatabase
-import br.com.meusite.basicdigitalbank.Data.Caixinha
-import br.com.meusite.basicdigitalbank.Data.CaixinhaViewModel
+import br.com.meusite.basicdigitalbank.data.AppDatabase
+import br.com.meusite.basicdigitalbank.data.Caixinha
+import br.com.meusite.basicdigitalbank.data.CaixinhaViewModel
 import br.com.meusite.basicdigitalbank.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.Dispatchers
