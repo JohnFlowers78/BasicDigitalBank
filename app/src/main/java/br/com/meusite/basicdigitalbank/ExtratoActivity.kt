@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meusite.basicdigitalbank.data.Transacao
+import br.com.meusite.basicdigitalbank.transacaoTelas.TransacaoAdapter
 
 class ExtratoActivity : AppCompatActivity() {
 
