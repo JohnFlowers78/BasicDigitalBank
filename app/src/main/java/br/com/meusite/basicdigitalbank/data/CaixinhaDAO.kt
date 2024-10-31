@@ -25,4 +25,7 @@ interface CaixinhaDAO {
 
     @Query("SELECT * FROM caixinha_table")
     fun listarCaixinha(): LiveData<List<Caixinha>>
+
+    @Query("SELECT * FROM caixinha_table WHERE id = :caixinhaId")
+    fun getCaixinhaById(caixinhaId: Int): LiveData<Caixinha>
 }

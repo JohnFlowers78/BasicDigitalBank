@@ -3,6 +3,7 @@ package br.com.meusite.basicdigitalbank.caixinhaTelas
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.meusite.basicdigitalbank.data.Caixinha
@@ -13,11 +14,10 @@ class CaixinhaAdapter(
     private val onItemClickListener: (Caixinha) -> Unit
 ) : RecyclerView.Adapter<CaixinhaAdapter.CaixinhaViewHolder>() {
 
-    private var caixinhaList = emptyList<Caixinha>()
-
-    class CaixinhaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class CaixinhaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nome: TextView = itemView.findViewById(R.id.descricaoTextView)
         val saldo: TextView = itemView.findViewById(R.id.saldoTextView)
+        val imagem: ImageView = itemView.findViewById(R.id.imageviewCaixinha)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CaixinhaViewHolder {
@@ -29,7 +29,7 @@ class CaixinhaAdapter(
         val caixinha = caixinhas[position]
         holder.nome.text = caixinha.nome
         holder.saldo.text = caixinha.saldo.toString()
-
+        holder.imagem.setImageResource(R.drawable.default_image)
         holder.itemView.setOnClickListener {
             onItemClickListener(caixinha)
         }
@@ -37,11 +37,6 @@ class CaixinhaAdapter(
 
     override fun getItemCount(): Int {
         return caixinhas.size
-    }
-
-    fun setData(caixinhas: List<Caixinha>){
-        this.caixinhaList = caixinhas
-        notifyDataSetChanged()
     }
 
     fun updateData(newCaixinhas: List<Caixinha>) {

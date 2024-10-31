@@ -5,57 +5,54 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".caixinhaTelas.CaixinhasFContainerVActivity">
+    tools:context=".caixinhaTelas.InvestimentosActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnCaixinhas2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:clickable="true"
-        android:contentDescription="ir_fragment_caixinhas"
+        android:contentDescription="@string/ir_fragment_caixinhas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnCredito2"
-        app:layout_constraintTop_toTopOf="@+id/ContainerMain"
-        app:layout_constraintVertical_bias="0.998"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928"
         app:srcCompat="@drawable/icon_sifrao" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnCredito2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
         android:clickable="true"
-        android:contentDescription="ir_fragment_valores"
+        android:contentDescription="@string/ir_fragment_valores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCaixinhas2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ContainerMain"
-        app:layout_constraintVertical_bias="0.998"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.927"
         app:srcCompat="@drawable/icon_transacao" />
 
     <View
-        android:id="@+id/view5"
+        android:id="@+id/view2"
         android:layout_width="match_parent"
         android:layout_height="125dp"
         android:background="#673AB7"
         android:backgroundTint="#673AB7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView2"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/Perfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,28 +60,59 @@
         app:srcCompat="@drawable/jose" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="244dp"
         android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Olá, José"
+        android:layout_marginEnd="72dp"
+        android:text="@string/Hello"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.356" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/ContainerCaixinhas"
-        android:name="br.com.meusite.basicdigitalbank.caixinhaTelas.DetalhesCaixinhaFragment"
-        android:layout_width="match_parent"
+        android:id="@+id/CaixnhaContainer"
+        android:name="br.com.meusite.basicdigitalbank.caixinhaTelas.CaixnhasFragment"
+        android:layout_width="397dp"
         android:layout_height="533dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout="@layout/fragment_detalhes_caixinha" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.992" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seu Saldo"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewSaldoCaix"
+        android:layout_width="316dp"
+        android:layout_height="24dp"
+        android:text="R$ 0,00"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

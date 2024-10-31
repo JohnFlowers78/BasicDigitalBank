@@ -1,13 +1,11 @@
 package br.com.meusite.basicdigitalbank.caixinhaTelas
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -18,12 +16,19 @@ import com.google.android.material.textfield.TextInputEditText
 
 class UpdateCaixinhaFragment : Fragment() {
 
+    private var caixinhaId: Int? = null
     private lateinit var txtCaixinhaNome: TextInputEditText
     private lateinit var txtCaixinhaValor: TextInputEditText
     private lateinit var btnAtualizar: Button
-    private lateinit var selectedImageView: ImageView
-    private var selectedImageRes: Int = R.drawable.default_image // Imagem padrão
     private lateinit var mCaixinhaViewModel: CaixinhaViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            caixinhaId = it.getInt(ARG_CAIXINHA_ID)
+        }
+        mCaixinhaViewModel = ViewModelProvider(requireActivity()).get(CaixinhaViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +41,13 @@ class UpdateCaixinhaFragment : Fragment() {
         txtCaixinhaValor = view.findViewById(R.id.txtEditValorU) // ID modificado
         btnAtualizar = view.findViewById(R.id.btnAtualizarCaixinha) // ID modificado
 
-        // Inicializa o ViewModel
-        mCaixinhaViewModel = ViewModelProvider(this).get(CaixinhaViewModel::class.java)
+        // Preenche os campos com os dados da caixinha
+        caixinhaId?.let { id ->
+            mCaixinhaViewModel.getCaixinhaById(id).observe(viewLifecycleOwner) { caixinha ->
+                txtCaixinhaNome.setText(caixinha.nome)
+                txtCaixinhaValor.setText(caixinha.saldo.toString())
+            }
+        }
 
         btnAtualizar.setOnClickListener {
             val nome = txtCaixinhaNome.text.toString()
@@ -45,11 +55,10 @@ class UpdateCaixinhaFragment : Fragment() {
 
             if (!TextUtils.isEmpty(valor)) {
                 val valorDouble = valor.toDoubleOrNull()
-                if (valorDouble != null) {
-                    val imageSelected = selectedImageRes?.toString()
-                    // Supondo que você tenha um método para obter a caixinha a ser atualizada
-                    val caixinha = Caixinha(0, nome, valorDouble)
-                    mCaixinhaViewModel.atualizarCaixinha(caixinha)  // Atualiza a caixinha
+                if (valorDouble != null && caixinhaId != null) {
+                    // Atualiza a caixinha com o ID correto
+                    val caixinha = Caixinha(caixinhaId!!, nome, valorDouble)
+                    mCaixinhaViewModel.atualizarCaixinha(caixinha)
                     Toast.makeText(requireContext(), "Caixinha Atualizada!", Toast.LENGTH_LONG).show()
                     voltar()
                 } else {
@@ -63,8 +72,20 @@ class UpdateCaixinhaFragment : Fragment() {
         return view
     }
 
-    fun voltar() {
-        val intent = Intent(requireActivity(), CaixinhasActivity::class.java)
-        startActivity(intent)
+    private fun voltar() {
+        // Volta para o fragmento anterior (CaixinhasFragment)
+        parentFragmentManager.popBackStack()
+    }
+
+    companion object {
+        private const val ARG_CAIXINHA_ID = "caixinha_id"
+
+        @JvmStatic
+        fun newInstance(caixinhaId: Int) =
+            UpdateCaixinhaFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(ARG_CAIXINHA_ID, caixinhaId)
+                }
+            }
     }
 }

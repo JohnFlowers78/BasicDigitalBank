@@ -5,6 +5,7 @@
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +14,10 @@
         android:theme="@style/Theme.BasicDigitalBank"
         tools:targetApi="31">
         <activity
-            android:name="br.com.meusite.basicdigitalbank.transacaoTelas.ExtratoActivity"
+            android:name=".caixinhaTelas.InvestimentosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".transacaoTelas.ExtratoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -25,11 +29,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.meusite.basicdigitalbank.caixinhaTelas.CaixinhasActivity"
+            android:name=".caixinhaTelas.CaixinhasActivity"
             android:exported="false" />
-
         <activity
-            android:name="br.com.meusite.basicdigitalbank.caixinhaTelas.CaixinhasFContainerVActivity"
+            android:name=".caixinhaTelas.CaixinhasFContainerVActivity"
             android:exported="false" />
     </application>
 

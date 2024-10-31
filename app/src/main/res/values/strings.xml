@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">BasicDigitalBank</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="img_User">Foto de Perfil do Usuário</string>
     <string name="ir_add_caixinha_fragm">Ir Add Caixinha</string>
     <string name="img_caixinha">Imagem Da Caixinha</string>
+    <string name="Hello">Olá, José</string>
+    <string name="Perfil">foto de perfil</string>
+    <string name="ir_fragment_valores">ir à tela de valores</string>
+    <string name="ir_fragment_caixinhas">ir à tela de caixinhas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

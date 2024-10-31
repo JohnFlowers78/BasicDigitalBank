@@ -17,4 +17,8 @@ class CaixinhaRepository(private val caixinhaDao: CaixinhaDAO) {
     suspend fun deletarCaixinha(caixinha: Caixinha){
         caixinhaDao.deletarCaixinha(caixinha)
     }
+
+    fun getCaixinhaById(caixinhaId: Int): LiveData<Caixinha> {
+        return caixinhaDao.getCaixinhaById(caixinhaId)
+    }
 }

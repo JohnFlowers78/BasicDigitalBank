@@ -35,4 +35,8 @@ class CaixinhaViewModel(application: Application): AndroidViewModel(application)
             repository.deletarCaixinha(caixinha)
         }
     }
+
+    fun getCaixinhaById(caixinhaId: Int): LiveData<Caixinha> {
+        return repository.getCaixinhaById(caixinhaId)
+    }
 }

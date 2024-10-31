@@ -6,7 +6,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import br.com.meusite.basicdigitalbank.caixinhaTelas.CaixinhasActivity
+import br.com.meusite.basicdigitalbank.caixinhaTelas.InvestimentosActivity
 import br.com.meusite.basicdigitalbank.transacaoTelas.CreditoFragment
 import br.com.meusite.basicdigitalbank.transacaoTelas.ExtratoActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -32,13 +32,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCaixinhas.setOnClickListener {
-            val intent = Intent(this, CaixinhasActivity::class.java)
+            val intent = Intent(this, InvestimentosActivity::class.java)
             startActivity(intent)
         }
 
         bttnExtrato.setOnClickListener {
             val intent = Intent(this, ExtratoActivity::class.java)
-
             startActivity(intent)
         }
 
@@ -64,11 +63,11 @@ class MainActivity : AppCompatActivity() {
         textSaldo.text = "R$ %.2f".format(saldoTotal)
     }
 
-    // Função para diminuir o saldo (nova função)
-    fun diminuirSaldo(valor: Double) {
-        saldoTotal -= valor
-        atualizarSaldo() // Atualiza a interface ou qualquer lógica associada ao saldo
-    }
+//    // Função para diminuir o saldo (nova função)
+//    fun diminuirSaldo(valor: Double) {
+//        saldoTotal -= valor
+//        atualizarSaldo() // Atualiza a interface ou qualquer lógica associada ao saldo
+//    }
 
     fun atualizarSaldoTransacao(valor: Double, tipoTransacao: String) {
         when (tipoTransacao) {

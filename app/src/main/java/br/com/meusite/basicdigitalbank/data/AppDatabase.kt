@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import java.util.concurrent.Executors
 
-@Database(entities = [Transacao::class, Caixinha::class], version = 8, exportSchema = false)
+@Database(entities = [Transacao::class, Caixinha::class], version = 24, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
 
     abstract fun transacaoDao(): TransacaoDAO
@@ -29,8 +29,9 @@ abstract class AppDatabase : RoomDatabase(){
                         context.applicationContext,               // Recebe o ctx da aplicação
                         AppDatabase::class.java,                   // Recebe a classe do banco de dados
                         "mydigitalbank_db"                     // Nome do Banco
-                    ).addCallback(DatabaseCallback(context))       // -->  Callback para adicionar a pré-população
-                     .build()
+                    )
+                        .addCallback(DatabaseCallback(context))      // -->  Callback para adicionar a pré-população
+                        .build()
 
                     INSTANCE = instance
                     return instance

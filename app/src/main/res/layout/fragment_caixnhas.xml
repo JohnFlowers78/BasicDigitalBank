@@ -2,55 +2,30 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/frameLayout7"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".caixinhaTelas.CaixinhasActivity">
-
-    <View
-        android:id="@+id/view3"
-        android:layout_width="411dp"
-        android:layout_height="68dp"
-        android:background="#673AB7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/img_User"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49"
-        app:srcCompat="@drawable/jose" />
+    tools:context=".caixinhaTelas.CaixnhasFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCaixinhas"
-        android:layout_width="match_parent"
-        android:layout_height="590dp"
+        android:layout_width="410dp"
+        android:layout_height="570dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3"
         tools:layoutManager="GridLayoutManager"
         tools:listitem="@layout/item_caixinha"
         tools:spanCount="3" />
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAddCaixinha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        android:src="@android:drawable/ic_input_add"
         android:contentDescription="@string/ir_add_caixinha_fragm"
+        android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="@+id/rvCaixinhas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.926"
